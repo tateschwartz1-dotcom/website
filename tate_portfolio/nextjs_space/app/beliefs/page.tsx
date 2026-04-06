@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { AnimatedBackground } from '@/components/animated-background';
 import { PageHeader } from '@/components/page-header';
+import { useTheme, THEME_COLORS } from '@/context/ThemeContext';
 
 const beliefs = [
-  { id: 1, text: 'Simple, but different', rotation: -3, bg: 'bg-coral' },
+  { id: 1, text: 'Simple, but different', rotation: -3 },
   {
     id: 2,
     lines: ["If you're not embarrassing yourself,", "you're not trying hard enough"],
     rotation: 4,
-    bg: 'bg-mint',
   },
-  { id: 3, text: 'Shooters shoot', rotation: -2, bg: 'bg-lavender' },
-  { id: 4, text: 'Keep the main thing, the main thing', rotation: 3, bg: 'bg-peach' },
+  { id: 3, text: 'Shooters shoot', rotation: -2 },
+  { id: 4, text: 'Keep the main thing, the main thing', rotation: 3 },
 ];
 
 function getPositions(w: number, h: number) {
@@ -36,11 +36,15 @@ function getPositions(w: number, h: number) {
 }
 
 export default function BeliefsPage() {
+  const { currentIndex } = useTheme();
   const [positions, setPositions] = useState<{ x: number; y: number }[] | null>(null);
 
   useEffect(() => {
     setPositions(getPositions(window.innerWidth, window.innerHeight));
   }, []);
+
+  // The 4 colors that are NOT the current background
+  const blockColors = THEME_COLORS.filter((_, i) => i !== currentIndex);
 
   return (
     <main className="relative h-screen overflow-hidden">
@@ -78,7 +82,10 @@ export default function BeliefsPage() {
               }}
               whileDrag={{ scale: 1.05, zIndex: 100 }}
             >
-              <div className={`${belief.bg} text-charcoal px-6 py-3 md:px-10 md:py-4 lg:px-14 lg:py-5 shadow-lg select-none`}>
+              <div
+                className="text-charcoal px-6 py-3 md:px-10 md:py-4 lg:px-14 lg:py-5 shadow-lg select-none"
+                style={{ backgroundColor: blockColors[i] }}
+              >
                 {'lines' in belief && belief.lines ? (
                   <div className="font-body text-base md:text-xl lg:text-2xl max-w-[80vw]">
                     {belief.lines.map((line, j) => (
