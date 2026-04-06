@@ -18,14 +18,14 @@ const courierPrime = Courier_Prime({
 });
 
 export const metadata: Metadata = {
-  title: "Tate Schwartz - Portfolio",
+  title: "Tate Schwartz",
   description: "Personal portfolio website of Tate Schwartz",
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
   },
   openGraph: {
-    title: "Tate Schwartz - Portfolio",
+    title: "Tate Schwartz",
     description: "Personal portfolio website of Tate Schwartz",
   },
 };
