@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tate Schwartz - Portfolio",
     description: "Personal portfolio website of Tate Schwartz",
-    images: ['/og-image.png'],
   },
 };
 
