@@ -9,32 +9,32 @@ const beliefs = [
     id: 1,
     text: 'Simple, but different',
     rotation: -3,
-    initialX: 50,
-    initialY: 80,
+    initialX: 20,
+    initialY: 60,
     bg: 'bg-coral',
   },
   {
     id: 2,
     lines: ["If you're not embarrassing yourself,", "you're not trying hard enough"],
     rotation: 4,
-    initialX: 120,
-    initialY: 220,
+    initialX: 15,
+    initialY: 200,
     bg: 'bg-mint',
   },
   {
     id: 3,
     text: 'Shooters shoot',
     rotation: -2,
-    initialX: 80,
-    initialY: 380,
+    initialX: 30,
+    initialY: 360,
     bg: 'bg-lavender',
   },
   {
     id: 4,
     text: 'Keep the main thing, the main thing',
     rotation: 3,
-    initialX: 350,
-    initialY: 180,
+    initialX: 20,
+    initialY: 480,
     bg: 'bg-peach',
   },
 ];
@@ -79,11 +79,11 @@ export default function BeliefsPage() {
                 {'lines' in belief && belief.lines ? (
                   <div className="font-body text-base md:text-xl lg:text-2xl">
                     {belief.lines.map((line, i) => (
-                      <p key={i} className="whitespace-nowrap">{line}</p>
+                      <p key={i} className="max-w-[80vw]">{line}</p>
                     ))}
                   </div>
                 ) : (
-                  <p className="font-body text-base md:text-xl lg:text-2xl whitespace-nowrap">
+                  <p className="font-body text-base md:text-xl lg:text-2xl max-w-[80vw]">
                     {'text' in belief ? belief.text : ''}
                   </p>
                 )}

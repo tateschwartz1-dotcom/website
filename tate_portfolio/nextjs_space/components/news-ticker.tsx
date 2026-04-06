@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState, useCallback } from 'react';
 
-const tickerText = "Welcome to my website • Look for the easter eggs hidden throughout • Click on the headers to go back a page • You can drag this bar • My design inspirations were the classic websites for comic strip cartoonists • Charmingly clean and simple • On the bottom left, you'll see The Button • I love pressing The Button • If you get a perfect score on your first try at Guess My Story, send me a message and I'll put you in the Line of Fame • Do not lie • Line of Fame: Mattea, Bryce • ٩(ˊᗜˋ )و";
+const tickerText = "Welcome to my website • Look for the easter eggs hidden throughout • Click on the headers to go back a page • You can drag this bar • My design inspirations were the classic websites for comic strip cartoonists • Charmingly clean and simple • On the bottom left, you'll see The Button • I love pressing The Button • If you get a perfect score on your first try at Guess My Story, send me a message and I'll put you in the Line of Fame • Do not lie • Line of Fame: Mattea, Alex • ٩(ˊᗜˋ )و";
 
 export function NewsTicker() {
   const containerRef = useRef<HTMLDivElement>(null);
