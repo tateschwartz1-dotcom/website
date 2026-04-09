@@ -9,13 +9,14 @@ import { PageHeader } from '@/components/page-header';
 import { projects, Project } from '@/lib/projects';
 
 const notebookImages = [
-  '/projects/IMG_7748.JPG',
-  '/projects/IMG_7749.JPG',
-  '/projects/IMG_7750.JPG',
-  '/projects/IMG_7751.JPG',
-  '/projects/IMG_7752.JPG',
-  '/projects/IMG_7754.JPG',
-  '/projects/IMG_7756.JPG',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_1.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_2.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_3.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_4.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_5.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_6.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_7.jpg',
+  '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_9.jpg',
 ];
 
 function renderExpandedContent(project: Project, onImageClick?: (index: number) => void) {
