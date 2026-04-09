@@ -273,7 +273,7 @@ export default function GuessMyStoryPage() {
           </button>
           <button
             onClick={() => {
-              setViewStep(0);
+              setViewStep(step);
               setCompleteOverlayHidden(true);
             }}
             className="font-pixel text-sm border-2 border-charcoal text-charcoal px-8 py-4 rounded-full hover:opacity-70 transition-opacity"
@@ -345,7 +345,7 @@ export default function GuessMyStoryPage() {
           {card.imageSrc && (
             <div className="w-full md:w-1/2 md:mx-auto aspect-video rounded-xl bg-white/30 mb-4 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={card.imageSrc} alt="" className="w-full h-full object-cover" />
+              <img src={card.imageSrc} alt="" className={`w-full h-full ${card.imageContain ? 'object-contain' : 'object-cover'}`} />
             </div>
           )}
 

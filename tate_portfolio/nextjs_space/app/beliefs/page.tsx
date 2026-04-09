@@ -8,13 +8,13 @@ import { useTheme, THEME_COLORS } from '@/context/ThemeContext';
 
 const beliefs = [
   { id: 1, text: 'Simple, but different', rotation: -3 },
+  { id: 4, text: 'Keep it simple, but different', rotation: 3 },
+  { id: 3, text: 'Shooters shoot', rotation: -2 },
   {
     id: 2,
     lines: ["If you're not embarrassing yourself,", "you're not trying hard enough"],
     rotation: 4,
   },
-  { id: 3, text: 'Shooters shoot', rotation: -2 },
-  { id: 4, text: 'Keep the main thing, the main thing', rotation: 3 },
 ];
 
 function getPositions(w: number, h: number) {
@@ -29,9 +29,9 @@ function getPositions(w: number, h: number) {
   }
   return [
     { x: w * 0.04, y: ch * 0.05 },
-    { x: w * 0.06, y: ch * 0.30 },
+    { x: w * 0.42, y: ch * 0.10 },
     { x: w * 0.05, y: ch * 0.55 },
-    { x: w * 0.42, y: ch * 0.18 },
+    { x: w * 0.06, y: ch * 0.75 },
   ];
 }
 
@@ -54,7 +54,7 @@ export default function BeliefsPage() {
         <PageHeader title="Beliefs" />
 
         <div className="relative h-[calc(100vh-120px)] mt-4">
-          {/* Hidden "Boo" text behind Shooters shoot block */}
+          {/* Hidden "Boo" text behind Shooters shoot block (index 2) */}
           {positions && (
             <div
               className="absolute font-body text-2xl md:text-3xl lg:text-4xl text-charcoal select-none"

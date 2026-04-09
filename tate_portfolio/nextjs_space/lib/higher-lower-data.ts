@@ -11,6 +11,7 @@ export interface GameCard {
   number: number;
   color: string;
   imageSrc?: string;
+  imageContain?: boolean;
   descriptionLinks?: InlineLink[];
   promptLinks?: InlineLink[];
 }
@@ -63,7 +64,7 @@ export const gameCards: GameCard[] = [
   },
   {
     description:
-      "My favorite class was studying away in Washington D.C. for American Political Communication. I got to learn from legislators, lawyers and leaders about how the city works.\n\nWhen I returned to campus, my job was to moderate nonpartisan political discussions on controversial topics for the C-SPAN Student Community. I was on C-SPAN\u2019s national broadcast asking an economist questions about college affordability.",
+      "My favorite class was studying away in Washington D.C. for American Political Communication. I got to learn from legislators, lawyers and leaders about how the city works.\n\nWhen I returned to campus, my job was to moderate nonpartisan political discussions on controversial topics for the C-SPAN Student Community. I was also on C-SPAN\u2019s national broadcast to interview an economist about college affordability.",
     numberPrompt:
       "Views my C-SPAN Washington Journal clip got on Instagram after six months",
     number: 2653,
@@ -88,7 +89,7 @@ export const gameCards: GameCard[] = [
   },
   {
     description:
-      "I currently intern at MascotGO, a startup company building an AI-native college discovery experience. It has been really exciting to work in such a fast-paced environment under the mentorship of a Silicon Valley veteran and a global technology CEO.",
+      "I currently intern at MascotGO, a startup company building an AI-native college discovery experience. It has been a blessing to work in such a fast-paced environment under the mentorship of a Silicon Valley veteran and a global technology CEO.",
     numberPrompt:
       "The number of degree-granting colleges nationwide in 2024",
     number: 3981,
@@ -106,7 +107,8 @@ export const gameCards: GameCard[] = [
       "The cost (in dollars) of a Bubble Bash Foam Party package for 300 people",
     number: 4200,
     color: "#C3B1E1",
-    imageSrc: "/higher-lower/degy.png",
+    imageSrc: "/projects/NEWDEGY.png",
+    imageContain: true,
     descriptionLinks: [
       { text: "Degy Entertainment", url: "https://www.degy.com/" },
     ],

@@ -91,16 +91,18 @@ export default function HomePage() {
                 href="https://www.linkedin.com/in/tateschwartz" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm md:text-base text-charcoal hover:opacity-70 transition-opacity"
+                className="font-body text-sm md:text-base hover:opacity-70 transition-opacity"
+                style={{ color: '#0A66C2' }}
                 title="LinkedIn"
               >
                 IN
               </a>
-              <a 
-                href="https://www.instagram.com/tate.schwartz/" 
+              <a
+                href="https://www.instagram.com/tate.schwartz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm md:text-base text-charcoal hover:opacity-70 transition-opacity"
+                className="font-body text-sm md:text-base hover:opacity-70 transition-opacity"
+                style={{ color: '#E1306C' }}
                 title="Instagram"
               >
                 IG
