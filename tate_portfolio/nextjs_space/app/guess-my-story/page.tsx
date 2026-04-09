@@ -343,7 +343,7 @@ export default function GuessMyStoryPage() {
         {/* Card content — top-aligned so layout doesn't shift */}
         <div className="flex-1 overflow-y-auto p-5 md:p-7 flex flex-col justify-start">
           {card.imageSrc && (
-            <div className="w-full md:w-1/2 md:mx-auto aspect-video rounded-xl bg-white/30 mb-4 overflow-hidden">
+            <div className={`w-full md:w-1/2 md:mx-auto aspect-video rounded-xl mb-4 overflow-hidden ${card.imageContain ? 'bg-transparent' : 'bg-white/30'}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={card.imageSrc} alt="" className={`w-full h-full ${card.imageContain ? 'object-contain' : 'object-cover'}`} />
             </div>
