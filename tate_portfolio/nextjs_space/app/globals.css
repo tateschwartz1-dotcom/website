@@ -74,3 +74,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .social-link-in {
+    color: #3A3A3A;
+  }
+  .social-link-in:hover {
+    background-color: #0A66C2;
+    color: #ffffff;
+  }
+
+  .social-link-ig {
+    color: #3A3A3A;
+  }
+  .social-link-ig:hover {
+    background-color: #E1306C;
+    color: #ffffff;
+  }
+
+  .social-link-em {
+    color: #3A3A3A;
+  }
+  .social-link-em:hover {
+    background-color: #16A34A;
+    color: #ffffff;
+  }
+}

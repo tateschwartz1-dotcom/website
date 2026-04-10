@@ -87,12 +87,11 @@ export default function HomePage() {
             </h1>
             
             <div className="flex justify-end space-x-4 mt-3">
-              <a 
-                href="https://www.linkedin.com/in/tateschwartz" 
+              <a
+                href="https://www.linkedin.com/in/tateschwartz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm md:text-base hover:opacity-70 transition-opacity"
-                style={{ color: '#0A66C2' }}
+                className="font-body text-sm md:text-base social-link social-link-in"
                 title="LinkedIn"
               >
                 IN
@@ -101,15 +100,14 @@ export default function HomePage() {
                 href="https://www.instagram.com/tate.schwartz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm md:text-base hover:opacity-70 transition-opacity"
-                style={{ color: '#E1306C' }}
+                className="font-body text-sm md:text-base social-link social-link-ig"
                 title="Instagram"
               >
                 IG
               </a>
-              <a 
-                href="mailto:tateschwartz1@outlook.com" 
-                className="font-body text-sm md:text-base text-charcoal hover:opacity-70 transition-opacity"
+              <a
+                href="mailto:tateschwartz1@outlook.com"
+                className="font-body text-sm md:text-base social-link social-link-em"
                 title="Email"
               >
                 EM
