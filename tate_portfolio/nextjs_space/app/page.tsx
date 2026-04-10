@@ -86,7 +86,7 @@ export default function HomePage() {
               TATE SCHWARTZ
             </h1>
             
-            <div className="flex justify-end space-x-4 mt-3">
+            <div className="flex justify-end space-x-4 mt-1">
               <a
                 href="https://www.linkedin.com/in/tateschwartz"
                 target="_blank"
