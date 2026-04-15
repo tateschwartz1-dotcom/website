@@ -54,7 +54,7 @@ export const projects: Project[] = [
     id: 'johnbox-games',
     title: 'Johnbox Games',
     description: "I love playing party games with my friends. To access premium features and ensure everyone can play on any device, I whipped up free versions of our favorite games.\n\nIt might take a minute to load the first time it\u2019s booted up. Play ",
-    image: '/projects/newerJBGL.png',
+    image: '/projects/newestJBGL.png',
     rotation: 3,
     position: { top: '45%', left: '35%' },
     size: { width: '160px', height: '160px' },

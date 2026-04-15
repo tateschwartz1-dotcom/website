@@ -19,7 +19,7 @@ export interface GameCard {
 export const gameCards: GameCard[] = [
   {
     description:
-      "My parents met in the Air Force, moving my childhood all over the place. I was born in Illinois, then bounced between England, Minnesota, Virginia and Michigan.\n\nHaving to reset so many times brought me close to my sister. We both play tennis, and she tests the card games I design.",
+      "My parents met in the Air Force, moving my childhood all over the place. I was born in Illinois, then bounced between England, Minnesota, Virginia and Michigan. Having to reset so many times brought me close to my sister.",
     numberPrompt: "The amount of miles I moved between those five locations",
     number: 9850,
     color: "#F5A88E",
@@ -46,7 +46,7 @@ export const gameCards: GameCard[] = [
   },
   {
     description:
-      "Working for the independent local newspaper, I wore a lot of hats. I wrote stories, filmed video, created puzzles, designed pages, managed large teams and edited everything.",
+      "Working for the independent local newspaper, I wore a lot of hats. I wrote stories, filmed videos, created puzzles, designed pages, managed large teams and edited everything.",
     numberPrompt:
       "The total number of New York Times crossword puzzles published before 2020",
     number: 25620,

@@ -269,7 +269,7 @@ export default function GuessMyStoryPage() {
             onClick={() => router.push('/projects')}
             className="font-pixel text-sm bg-charcoal text-white px-8 py-4 rounded-full hover:opacity-80 transition-opacity"
           >
-            Projects
+            Go Back
           </button>
           <button
             onClick={() => {
