@@ -4,7 +4,6 @@ const path = require('path');
 const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || '.next',
   output: process.env.NEXT_OUTPUT_MODE,
-  skipTrailingSlashRedirect: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -12,23 +11,17 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: { unoptimized: true },
-  async rewrites() {
+  async redirects() {
     return [
-      {
-        source: '/johnbox/socket.io',
-        destination: 'https://partypack.onrender.com/socket.io',
-      },
-      {
-        source: '/johnbox/socket.io/:path*',
-        destination: 'https://partypack.onrender.com/socket.io/:path*',
-      },
       {
         source: '/johnbox',
         destination: 'https://partypack.onrender.com/johnbox/',
+        permanent: false,
       },
       {
         source: '/johnbox/:path*',
         destination: 'https://partypack.onrender.com/johnbox/:path*',
+        permanent: false,
       },
     ];
   },
