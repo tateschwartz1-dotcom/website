@@ -15,6 +15,14 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/johnbox/socket.io',
+        destination: 'https://partypack.onrender.com/socket.io',
+      },
+      {
+        source: '/johnbox/socket.io/:path*',
+        destination: 'https://partypack.onrender.com/socket.io/:path*',
+      },
+      {
         source: '/johnbox',
         destination: 'https://partypack.onrender.com/johnbox/',
       },
