@@ -11,6 +11,14 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: { unoptimized: true },
+  async rewrites() {
+    return [
+      {
+        source: '/johnbox',
+        destination: 'https://partypack.onrender.com/johnbox',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
