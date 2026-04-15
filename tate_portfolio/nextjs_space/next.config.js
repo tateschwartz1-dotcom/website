@@ -4,6 +4,7 @@ const path = require('path');
 const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || '.next',
   output: process.env.NEXT_OUTPUT_MODE,
+  skipTrailingSlashRedirect: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -15,7 +16,11 @@ const nextConfig = {
     return [
       {
         source: '/johnbox',
-        destination: 'https://partypack.onrender.com/johnbox',
+        destination: 'https://partypack.onrender.com/johnbox/',
+      },
+      {
+        source: '/johnbox/:path*',
+        destination: 'https://partypack.onrender.com/johnbox/:path*',
       },
     ];
   },
