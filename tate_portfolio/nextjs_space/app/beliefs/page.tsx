@@ -7,13 +7,12 @@ import { PageHeader } from '@/components/page-header';
 import { useTheme, THEME_COLORS } from '@/context/ThemeContext';
 
 const beliefs = [
-  { id: 1, text: 'Simple, but different', rotation: -3 },
   { id: 4, text: 'Keep it simple, but different', rotation: 3 },
   { id: 3, text: 'Shooters shoot', rotation: -2 },
   {
     id: 2,
     lines: ["If you're not embarrassing yourself,", "you're not trying hard enough"],
-    rotation: 4,
+    rotation: 1,
   },
 ];
 
@@ -22,16 +21,14 @@ function getPositions(w: number, h: number) {
   if (w < 768) {
     return [
       { x: 20, y: ch * 0.03 },
-      { x: 15, y: ch * 0.25 },
-      { x: 25, y: ch * 0.50 },
+      { x: 15, y: ch * 0.43 },
       { x: 18, y: ch * 0.73 },
     ];
   }
   return [
     { x: w * 0.04, y: ch * 0.05 },
-    { x: w * 0.42, y: ch * 0.10 },
-    { x: w * 0.05, y: ch * 0.55 },
-    { x: w * 0.06, y: ch * 0.75 },
+    { x: w * 0.52, y: ch * 0.38 },
+    { x: w * 0.08, y: ch * 0.65 },
   ];
 }
 
@@ -54,13 +51,13 @@ export default function BeliefsPage() {
         <PageHeader title="Beliefs" />
 
         <div className="relative h-[calc(100vh-120px)] mt-4">
-          {/* Hidden "Boo" text behind Shooters shoot block (index 2) */}
+          {/* Hidden "Boo" text behind Shooters shoot block (index 1) */}
           {positions && (
             <div
               className="absolute font-body text-2xl md:text-3xl lg:text-4xl text-charcoal select-none"
               style={{
-                left: positions[2].x,
-                top: positions[2].y,
+                left: positions[1].x,
+                top: positions[1].y,
                 transform: 'rotate(-2deg)',
               }}
             >

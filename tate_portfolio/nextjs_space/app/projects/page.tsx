@@ -20,6 +20,23 @@ const notebookImages = [
 ];
 
 function renderExpandedContent(project: Project, onImageClick?: (index: number) => void) {
+  if (project.id === 'guess-my-story') {
+    return (
+      <div className="font-pixel text-sm text-charcoal/90 leading-loose">
+        <p>
+          Learn all about me by playing a quick game. Click{' '}
+          <a
+            href="/guess-my-story"
+            className="underline underline-offset-4 hover:opacity-70 transition-opacity"
+          >
+            here
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
+
   if (project.id === 'classified') {
     return (
       <div className="font-pixel text-sm text-charcoal/90 leading-loose">
@@ -144,10 +161,10 @@ export default function ProjectsPage() {
     image: '/projects/guessmystory.png',
     rotation: -4,
     scale: 1,
-    isGame: true,
+    isGame: false,
   };
 
-  const projectOrder = ['card-back', 'classified', 'miel-wearline', 'el-summer-games', 'book-cover', 'the-process'];
+  const projectOrder = ['johnbox-games', 'classified', 'card-back', 'miel-wearline', 'el-summer-games', 'book-cover', 'the-process'];
   const orderedProjects = projectOrder
     .map(id => projects.find(p => p.id === id))
     .filter(Boolean)
@@ -168,8 +185,9 @@ export default function ProjectsPage() {
               key={item.id}
               className="relative w-full max-w-xs"
               style={{
-                marginTop: index === 0 ? 0 : -55,
-                zIndex: expandedId === item.id ? 100 : allItems.length - index,
+                marginTop: index === 0 ? 0 : index === 1 ? -24 : index === 2 ? -52 : index === 3 ? -44 : index === 4 ? -30 : index === 5 ? -30 : index === 6 ? -35 : index === 7 ? -60 : index >= 5 ? -20 : -50,
+                marginLeft: index === 5 ? 20 : undefined,
+                zIndex: expandedId === item.id ? 100 : index === 2 ? allItems.length + 1 : index === 6 ? allItems.length : index === 7 ? allItems.length + 2 : allItems.length - index,
               }}
             >
               {/* Image — rotated */}
@@ -190,7 +208,7 @@ export default function ProjectsPage() {
               ) : (
                 <button
                   onClick={() => toggle(item.id)}
-                  className="relative block h-44 w-full group cursor-pointer"
+                  className={`relative block w-full group cursor-pointer ${item.id === 'guess-my-story' ? 'h-32' : 'h-44'}`}
                   style={{ transform: `rotate(${item.rotation}deg) scale(${item.scale || 1})` }}
                 >
                   <Image
