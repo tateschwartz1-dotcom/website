@@ -14,21 +14,24 @@ const beliefs = [
     lines: ["If you're not embarrassing yourself,", "you're not trying hard enough"],
     rotation: 1,
   },
+  { id: 1, text: 'Be the change you want to see', rotation: -3 },
 ];
 
 function getPositions(w: number, h: number) {
   const ch = h - 120;
   if (w < 768) {
     return [
-      { x: 20, y: ch * 0.03 },
-      { x: 15, y: ch * 0.43 },
-      { x: 18, y: ch * 0.73 },
+      { x: w * 0.05, y: ch * 0.02 },
+      { x: w * 0.05, y: ch * 0.74 },
+      { x: w * 0.05, y: ch * 0.50 },
+      { x: w * 0.05, y: ch * 0.26 },
     ];
   }
   return [
-    { x: w * 0.04, y: ch * 0.05 },
-    { x: w * 0.52, y: ch * 0.38 },
-    { x: w * 0.08, y: ch * 0.65 },
+    { x: w * 0.08, y: ch * 0.04 },
+    { x: w * 0.62, y: ch * 0.55 },
+    { x: w * 0.10, y: ch * 0.64 },
+    { x: w * 0.33, y: ch * 0.30 },
   ];
 }
 
