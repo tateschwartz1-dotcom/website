@@ -31,7 +31,7 @@ export const favorites: FavoriteCategory[] = [
   },
   {
     category: 'Video games',
-    items: ['Super Mario Maker 2', 'Minecraft build battle', 'Photo Roulette'],
+    items: ['Super Mario Maker 2', 'Minecraft build battle', 'Plants vs. Zombies'],
   },
   {
     category: 'Tabletop games',
@@ -39,7 +39,7 @@ export const favorites: FavoriteCategory[] = [
   },
   {
     category: 'Sport teams',
-    items: ['Purdue Basketball', 'Kahawa Pride FC', 'Detroit Tigers'],
+    items: ['Purdue Basketball', 'Detroit Tigers', 'Kahawa Pride FC'],
   },
   {
     category: 'Personality tests',
