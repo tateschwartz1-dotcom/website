@@ -57,7 +57,17 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        pixel: ['"Press Start 2P"', 'monospace'],
+        pixel: [
+          'ui-monospace',
+          'SFMono-Regular',
+          '"SF Mono"',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          '"Liberation Mono"',
+          '"Courier New"',
+          'monospace',
+        ],
         serif: ['"Courier Prime"', 'Courier New', 'monospace'],
       },
     },
