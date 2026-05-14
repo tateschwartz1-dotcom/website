@@ -11,6 +11,7 @@ const courierPrime = Courier_Prime({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tateschwartz.net"),
   title: "Tate Schwartz",
   description: "Personal portfolio website of Tate Schwartz",
   icons: {
