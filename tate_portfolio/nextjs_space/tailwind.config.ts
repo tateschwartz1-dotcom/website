@@ -58,14 +58,7 @@ const config: Config = {
       },
       fontFamily: {
         pixel: [
-          'ui-monospace',
-          'SFMono-Regular',
-          '"SF Mono"',
-          'Menlo',
-          'Monaco',
           'Consolas',
-          '"Liberation Mono"',
-          '"Courier New"',
           'monospace',
         ],
         serif: ['"Courier Prime"', 'Courier New', 'monospace'],
