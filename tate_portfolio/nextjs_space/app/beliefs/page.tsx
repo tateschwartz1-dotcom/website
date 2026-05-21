@@ -54,14 +54,14 @@ export default function BeliefsPage() {
         <PageHeader title="Beliefs" />
 
         <div className="relative h-[calc(100vh-120px)] mt-4">
-          {/* Hidden "Boo" text behind Shooters shoot block (index 1) */}
+          {/* Hidden "Boo" text behind Be the change block (index 3) */}
           {positions && (
             <div
               className="absolute font-body text-2xl md:text-3xl lg:text-4xl text-charcoal select-none"
               style={{
-                left: positions[1].x,
-                top: positions[1].y,
-                transform: 'rotate(-2deg)',
+                left: positions[3].x,
+                top: positions[3].y,
+                transform: 'rotate(-3deg)',
               }}
             >
               Boo

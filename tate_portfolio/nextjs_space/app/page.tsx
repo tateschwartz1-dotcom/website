@@ -109,6 +109,22 @@ export default function HomePage() {
                 href="mailto:tateschwartz1@outlook.com"
                 className="font-body text-sm md:text-base social-link social-link-em"
                 title="Email"
+                onMouseEnter={(event) => {
+                  event.currentTarget.style.backgroundColor = '#3A3A3A';
+                  event.currentTarget.style.color = '#ffffff';
+                }}
+                onMouseLeave={(event) => {
+                  event.currentTarget.style.backgroundColor = '';
+                  event.currentTarget.style.color = '';
+                }}
+                onFocus={(event) => {
+                  event.currentTarget.style.backgroundColor = '#3A3A3A';
+                  event.currentTarget.style.color = '#ffffff';
+                }}
+                onBlur={(event) => {
+                  event.currentTarget.style.backgroundColor = '';
+                  event.currentTarget.style.color = '';
+                }}
               >
                 EM
               </a>
