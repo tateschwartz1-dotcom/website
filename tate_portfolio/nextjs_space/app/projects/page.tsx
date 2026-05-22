@@ -220,7 +220,6 @@ export default function ProjectsPage() {
               className="relative w-full max-w-xs"
               style={{
                 marginTop: index === 0 ? 0 : index === 1 ? -24 : index === 2 ? -52 : index === 3 ? -44 : index === 4 ? -30 : index === 5 ? -30 : index === 6 ? -35 : index === 7 ? -12 : index >= 5 ? -20 : -50,
-                marginLeft: index === 5 ? 20 : undefined,
                 zIndex: expandedIds.includes(item.id) ? 100 : index === 2 ? allItems.length + 1 : index === 6 ? allItems.length : index === 7 ? allItems.length + 2 : allItems.length - index,
               }}
             >
