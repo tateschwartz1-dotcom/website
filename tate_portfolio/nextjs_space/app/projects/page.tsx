@@ -19,6 +19,27 @@ const notebookImages = [
   '/projects/1775704444541-2fbacafc-92e5-43f4-b670-4cf6e5be38ad_9.jpg',
 ];
 
+const expandedBoxTopGap: Record<string, string> = {
+  'johnbox-games': '-mt-6',
+  classified: '-mt-6',
+  'card-back': '-mt-6',
+  'guess-my-story': 'mt-0',
+  'miel-wearline': 'mt-2',
+  'el-summer-games': '-mt-8',
+  'book-cover': '-mt-2',
+  'the-process': '-mt-5',
+};
+
+const expandedBoxBottomGap: Record<string, string> = {
+  'guess-my-story': 'mb-12',
+  'johnbox-games': 'mb-20',
+  classified: 'mb-16',
+  'card-back': 'mb-20',
+  'miel-wearline': 'mb-8',
+  'el-summer-games': 'mb-20',
+  'book-cover': 'mb-10',
+};
+
 function renderExpandedContent(project: Project, onImageClick?: (index: number) => void) {
   if (project.id === 'guess-my-story') {
     return (
@@ -139,10 +160,12 @@ function renderExpandedContent(project: Project, onImageClick?: (index: number) 
 }
 
 export default function ProjectsPage() {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<string[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const toggle = (id: string) => setExpandedId(prev => prev === id ? null : id);
+  const toggle = (id: string) => {
+    setExpandedIds(prev => prev.includes(id) ? prev.filter(expandedId => expandedId !== id) : [...prev, id]);
+  };
 
   useEffect(() => {
     if (lightboxIndex === null) return;
@@ -171,6 +194,10 @@ export default function ProjectsPage() {
     .map(p => ({ ...p!, isGame: false }));
 
   const allItems = [gameItem, ...orderedProjects];
+  const expandableIds = allItems.filter(item => !item.isGame).map(item => item.id);
+  const allExpanded = expandedIds.length === expandableIds.length;
+  const expandButtonLabel = allExpanded ? 'Collapse all' : 'Expand all';
+  const toggleAll = () => setExpandedIds(allExpanded ? [] : expandableIds);
 
   return (
     <main className="relative min-h-screen">
@@ -180,14 +207,21 @@ export default function ProjectsPage() {
         <PageHeader title="Projects" />
 
         <div className="flex flex-col items-center mt-10">
+          <button
+            onClick={toggleAll}
+            className="mb-6 font-pixel text-sm md:text-base text-charcoal border-2 border-charcoal px-4 py-2 bg-white/70 hover:bg-charcoal hover:text-white transition-colors"
+          >
+            {expandButtonLabel}
+          </button>
+
           {allItems.map((item, index) => (
             <div
               key={item.id}
               className="relative w-full max-w-xs"
               style={{
-                marginTop: index === 0 ? 0 : index === 1 ? -24 : index === 2 ? -52 : index === 3 ? -44 : index === 4 ? -30 : index === 5 ? -30 : index === 6 ? -35 : index === 7 ? -60 : index >= 5 ? -20 : -50,
+                marginTop: index === 0 ? 0 : index === 1 ? -24 : index === 2 ? -52 : index === 3 ? -44 : index === 4 ? -30 : index === 5 ? -30 : index === 6 ? -35 : index === 7 ? -12 : index >= 5 ? -20 : -50,
                 marginLeft: index === 5 ? 20 : undefined,
-                zIndex: expandedId === item.id ? 100 : index === 2 ? allItems.length + 1 : index === 6 ? allItems.length : index === 7 ? allItems.length + 2 : allItems.length - index,
+                zIndex: expandedIds.includes(item.id) ? 100 : index === 2 ? allItems.length + 1 : index === 6 ? allItems.length : index === 7 ? allItems.length + 2 : allItems.length - index,
               }}
             >
               {/* Image — rotated */}
@@ -208,7 +242,7 @@ export default function ProjectsPage() {
               ) : (
                 <button
                   onClick={() => toggle(item.id)}
-                  className={`relative block w-full group cursor-pointer ${item.id === 'guess-my-story' ? 'h-32' : 'h-44'}`}
+                  className={`relative block w-full group cursor-pointer ${item.id === 'guess-my-story' || item.id === 'the-process' ? 'h-32' : 'h-44'}`}
                   style={{ transform: `rotate(${item.rotation}deg) scale(${item.scale || 1})` }}
                 >
                   <Image
@@ -224,15 +258,17 @@ export default function ProjectsPage() {
               {/* Description — not rotated, expands in flow */}
               {!item.isGame && (
                 <AnimatePresence>
-                  {expandedId === item.id && (
+                  {expandedIds.includes(item.id) && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
+                      className={item.id === 'johnbox-games' || item.id === 'classified' || item.id === 'card-back' || item.id === 'el-summer-games' || item.id === 'book-cover' || item.id === 'the-process' ? 'overflow-visible' : 'overflow-hidden'}
                     >
-                      <div className="bg-white rounded-2xl p-6 mt-3 mb-2">
+                      <div
+                        className={`bg-white rounded-2xl p-6 ${expandedBoxTopGap[item.id] || 'mt-3'} ${expandedBoxBottomGap[item.id] || 'mb-2'}`}
+                      >
                         <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-3 font-semibold">
                           {item.title}
                         </h2>
@@ -244,6 +280,15 @@ export default function ProjectsPage() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <button
+            onClick={toggleAll}
+            className="font-pixel text-sm md:text-base text-charcoal border-2 border-charcoal px-4 py-2 bg-white/70 hover:bg-charcoal hover:text-white transition-colors"
+          >
+            {expandButtonLabel}
+          </button>
         </div>
       </div>
       {/* Lightbox */}

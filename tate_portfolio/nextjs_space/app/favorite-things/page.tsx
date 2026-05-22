@@ -426,8 +426,10 @@ export default function FavoriteThingsPage() {
       {/* Animated Background */}
       <motion.div
         className="fixed inset-0 z-0"
+        style={{ backgroundColor }}
+        initial={false}
         animate={{ backgroundColor }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
       />
       
       {/* Chip Rain Effect */}

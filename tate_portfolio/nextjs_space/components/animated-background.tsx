@@ -9,6 +9,8 @@ export function AnimatedBackground() {
   return (
     <motion.div
       className="fixed inset-0 -z-10"
+      style={{ backgroundColor: currentColor }}
+      initial={false}
       animate={{ backgroundColor: currentColor }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
     />

@@ -57,10 +57,10 @@ export default function BeliefsPage() {
           {/* Hidden "Boo" text behind Be the change block (index 3) */}
           {positions && (
             <div
-              className="absolute font-body text-2xl md:text-3xl lg:text-4xl text-charcoal select-none"
+              className="absolute font-body text-base md:text-xl lg:text-2xl text-charcoal select-none"
               style={{
-                left: positions[3].x,
-                top: positions[3].y,
+                left: positions[3].x + 24,
+                top: positions[3].y + 12,
                 transform: 'rotate(-3deg)',
               }}
             >

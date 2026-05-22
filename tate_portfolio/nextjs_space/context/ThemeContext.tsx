@@ -4,11 +4,11 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 // Define available theme colors
 export const THEME_COLORS = [
-  '#F5A88E', // coral
-  '#B4E7CE', // mint
-  '#D4C5F9', // lavender
   '#FFD4B2', // peach
+  '#B4E7CE', // mint
+  '#F5A88E', // coral
   '#C5E3F6', // sky
+  '#D4C5F9', // lavender
 ] as const;
 
 type ThemeColor = typeof THEME_COLORS[number];
