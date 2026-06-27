@@ -7,7 +7,7 @@ import { PageHeader } from '@/components/page-header';
 import { useTheme, THEME_COLORS } from '@/context/ThemeContext';
 
 const beliefs = [
-  { id: 4, text: 'Data is king', rotation: 3 },
+  { id: 4, text: "You don't know better than the data", rotation: 3 },
   { id: 3, text: 'Shooters shoot', rotation: -2 },
   {
     id: 2,
