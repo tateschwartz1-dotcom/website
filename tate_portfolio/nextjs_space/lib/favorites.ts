@@ -27,7 +27,7 @@ export const favorites: FavoriteCategory[] = [
   },
   {
     category: 'Music artists',
-    items: ['Bad Bunny', 'Orville Peck', 'Glorb'],
+    items: ['Bad Bunny', 'Orville Peck', 'Álvaro Díaz'],
   },
   {
     category: 'Video games',
@@ -63,6 +63,6 @@ export const favorites: FavoriteCategory[] = [
   },
   {
     category: 'Words that describe me',
-    items: ['Playful', 'Creative', 'Strategic'],
+    items: ['Playful', 'Creative', 'Passionate'],
   },
 ];
