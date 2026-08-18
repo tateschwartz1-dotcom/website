@@ -71,11 +71,11 @@ export default function HomePage() {
               >
                 Favorite things
               </Link>
-              <Link 
-                href="/beliefs" 
+              <Link
+                href="/posts"
                 className="font-body text-xl md:text-2xl text-charcoal italic underline underline-offset-4 hover:opacity-70 transition-opacity w-fit"
               >
-                Beliefs
+                Posts
               </Link>
             </nav>
           </div>

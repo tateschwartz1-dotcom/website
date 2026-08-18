@@ -62,6 +62,7 @@ const config: Config = {
           'monospace',
         ],
         serif: ['"Courier Prime"', 'Courier New', 'monospace'],
+        garamond: ['var(--font-garamond)', 'Garamond', 'Georgia', 'serif'],
       },
     },
   },
