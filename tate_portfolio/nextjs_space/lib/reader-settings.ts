@@ -3,11 +3,13 @@
 
 export const STORAGE_KEY = 'postReaderSettings';
 
+// Order is the panel's 2-column grid reading order: Sans top-left (the
+// default), Garamond top-right, the two monospaces underneath.
 export const TYPEFACES = [
+  { id: 'sans', label: 'Sans', stack: '"Helvetica Neue", Helvetica, Arial, sans-serif' },
   { id: 'garamond', label: 'Garamond', stack: 'var(--font-garamond), Garamond, Georgia, serif' },
   { id: 'courier', label: 'Courier', stack: '"Courier Prime", "Courier New", monospace' },
   { id: 'consolas', label: 'Consolas', stack: 'Consolas, "Lucida Console", monospace' },
-  { id: 'sans', label: 'Sans', stack: '"Helvetica Neue", Helvetica, Arial, sans-serif' },
 ] as const;
 
 /** Body size in px; everything else on the page scales off this with `em`. */
@@ -59,7 +61,7 @@ export interface ReaderSettings {
 }
 
 export const DEFAULT_SETTINGS: ReaderSettings = {
-  typeface: 'garamond',
+  typeface: 'sans',
   size: 20,
   spacing: 'normal',
   width: 'normal',

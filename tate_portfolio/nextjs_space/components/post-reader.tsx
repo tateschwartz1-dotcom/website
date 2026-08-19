@@ -263,8 +263,10 @@ export function PostReader({ title, date, readingTime, drawing, blocks, footnote
         >
           <h1 className="text-[2.15em] leading-[1.15] font-semibold text-center">{title}</h1>
 
+          {/* Pixel font, matching the posts index — the meta line stays put
+              while the prose around it follows the typeface setting. */}
           <p
-            className="mt-[1.1em] text-center uppercase tracking-[0.18em] text-[0.68em]"
+            className="mt-[1.1em] text-center font-pixel uppercase tracking-[0.15em] text-[0.68em]"
             style={{ color: withAlpha(fg, 0.65) }}
           >
             {formatDate(date)} · {readingTime} min

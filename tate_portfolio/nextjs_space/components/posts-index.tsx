@@ -1,13 +1,24 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { PostDrawing } from '@/components/post-drawing';
 import { formatDate } from '@/lib/post-meta';
 import type { PostMeta } from '@/lib/post-meta';
+import { DEFAULT_SETTINGS, TYPEFACES, loadSettings } from '@/lib/reader-settings';
 
 export function PostsIndex({ posts }: { posts: PostMeta[] }) {
   const [newestFirst, setNewestFirst] = useState(true);
+  // Post titles follow whichever typeface the reader panel is set to.
+  const [typefaceId, setTypefaceId] = useState(DEFAULT_SETTINGS.typeface);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setTypefaceId(loadSettings().typeface);
+    setHydrated(true);
+  }, []);
+
+  const typeface = TYPEFACES.find((t) => t.id === typefaceId) ?? TYPEFACES[0];
 
   const ordered = useMemo(() => {
     const sorted = [...posts].sort((a, b) => a.date.localeCompare(b.date));
@@ -16,7 +27,10 @@ export function PostsIndex({ posts }: { posts: PostMeta[] }) {
 
   if (posts.length === 0) {
     return (
-      <p className="mt-16 text-center font-garamond text-xl text-charcoal/70">
+      <p
+        className="mt-16 text-center text-xl text-charcoal/70"
+        style={{ fontFamily: typeface.stack }}
+      >
         Nothing here yet.
       </p>
     );
@@ -33,7 +47,14 @@ export function PostsIndex({ posts }: { posts: PostMeta[] }) {
         </button>
       </div>
 
-      <ul className="mt-3 border-t border-charcoal/25">
+      <ul
+        className="mt-3 border-t border-charcoal/25"
+        style={{
+          // Avoid a visible reflow while the stored typeface is read.
+          opacity: hydrated ? 1 : 0,
+          transition: 'opacity 150ms ease',
+        }}
+      >
         {ordered.map((post) => (
           <li key={post.slug} className="border-b border-charcoal/25">
             <Link
@@ -41,7 +62,10 @@ export function PostsIndex({ posts }: { posts: PostMeta[] }) {
               className="group flex items-center gap-5 py-6 md:py-7"
             >
               <div className="flex-1 min-w-0">
-                <h2 className="font-garamond text-2xl md:text-3xl leading-snug text-charcoal group-hover:underline underline-offset-4 decoration-1">
+                <h2
+                  className="text-2xl md:text-3xl leading-snug text-charcoal group-hover:underline underline-offset-4 decoration-1"
+                  style={{ fontFamily: typeface.stack }}
+                >
                   {post.title}
                 </h2>
                 <p className="mt-2 font-pixel text-[0.68rem] uppercase tracking-[0.15em] text-charcoal/65">
