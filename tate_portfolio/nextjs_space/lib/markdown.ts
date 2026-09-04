@@ -9,10 +9,16 @@ export type Inline =
   | { type: 'link'; value: string; href: string }
   | { type: 'footnoteRef'; label: string; index: number };
 
+/** A bullet, plus any bullets indented beneath it. Only one level deep. */
+export interface ListItem {
+  content: Inline[];
+  children?: Inline[][];
+}
+
 export type Block =
   | { type: 'heading'; content: Inline[] }
   | { type: 'paragraph'; content: Inline[] }
-  | { type: 'list'; items: Inline[][] }
+  | { type: 'list'; items: ListItem[] }
   | { type: 'quote'; content: Inline[] }
   | { type: 'image'; src: string; caption?: string };
 
@@ -31,6 +37,10 @@ const FOOTNOTE_DEF = /^\[\^([^\]]+)\]:\s*(.*)$/;
 // `[IMAGE: file.png — caption]`. The caption separator must have whitespace on
 // both sides so hyphens inside a filename aren't mistaken for it.
 const IMAGE_LINE = /^\[IMAGE:\s*(.+?)(?:\s+[—–-]\s+(.*?))?\s*\]$/;
+// Leading whitespace is captured, not trimmed away: two or more spaces of indent
+// nests a bullet under the previous one.
+const LIST_ITEM = /^(\s*)[-*]\s+(.*)$/;
+const NEST_INDENT = 2;
 
 /**
  * Footnote labels are whatever the author typed (`[^1]`, `[^why]`). Display
@@ -91,7 +101,7 @@ export function parseMarkdown(body: string): ParsedPost {
 
   // Buffers for the multi-line blocks (paragraphs and lists).
   let paragraph: string[] = [];
-  let listItems: string[] = [];
+  let listItems: { raw: string; children: string[] }[] = [];
 
   const flushParagraph = () => {
     if (paragraph.length === 0) return;
@@ -101,7 +111,15 @@ export function parseMarkdown(body: string): ParsedPost {
 
   const flushList = () => {
     if (listItems.length === 0) return;
-    blocks.push({ type: 'list', items: listItems.map((item) => parseInline(item, numberFor)) });
+    blocks.push({
+      type: 'list',
+      items: listItems.map((item) => ({
+        content: parseInline(item.raw, numberFor),
+        children: item.children.length
+          ? item.children.map((child) => parseInline(child, numberFor))
+          : undefined,
+      })),
+    });
     listItems = [];
   };
 
@@ -156,9 +174,17 @@ export function parseMarkdown(body: string): ParsedPost {
       continue;
     }
 
-    if (/^[-*]\s+/.test(trimmed)) {
+    // Matched against the raw line so the indent survives; a nested bullet with
+    // nothing above it is treated as top-level rather than dropped.
+    const listItem = LIST_ITEM.exec(line);
+    if (listItem) {
       flushParagraph();
-      listItems.push(trimmed.replace(/^[-*]\s+/, ''));
+      const nested = listItem[1].length >= NEST_INDENT && listItems.length > 0;
+      if (nested) {
+        listItems[listItems.length - 1].children.push(listItem[2].trim());
+      } else {
+        listItems.push({ raw: listItem[2].trim(), children: [] });
+      }
       continue;
     }
 

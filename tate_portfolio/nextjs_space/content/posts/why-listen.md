@@ -23,7 +23,7 @@ I'll fight to stack my odds. I'll flash my gold. Until then, welcome to my test 
 
 Here's a teaser of what could appear on the menu:
 
-- How I Use Game Design Principles in My Day-to-Day Life
+- Game Design Principles to Use in Real Life
 - Writing to Strangers Through a Book
 - How Little Halloween Village Sets Are Designed
 - The Only 5 Political Facts Needed for Arguing

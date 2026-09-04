@@ -4,6 +4,15 @@ import { Fragment } from 'react';
 import { Block, Footnote, Inline } from '@/lib/markdown';
 import { PostDrawing } from '@/components/post-drawing';
 
+// A `/`-relative href is same-tab navigation, with one exception: a link
+// straight to a file (the games packet PDF, say) opens in a new tab so the
+// post the reader was in stays put behind it.
+const FILE_HREF = /\.[a-z0-9]{2,4}(?:[?#]|$)/i;
+
+function opensInNewTab(href: string) {
+  return !href.startsWith('/') || FILE_HREF.test(href);
+}
+
 function renderInline(spans: Inline[], keyPrefix: string) {
   return spans.map((span, i) => {
     const key = `${keyPrefix}-${i}`;
@@ -17,8 +26,8 @@ function renderInline(spans: Inline[], keyPrefix: string) {
           <a
             key={key}
             href={span.href}
-            target={span.href.startsWith('/') ? '_self' : '_blank'}
-            rel={span.href.startsWith('/') ? undefined : 'noopener noreferrer'}
+            target={opensInNewTab(span.href) ? '_blank' : '_self'}
+            rel={opensInNewTab(span.href) ? 'noopener noreferrer' : undefined}
             className="underline underline-offset-[3px] decoration-[0.06em] hover:opacity-70 transition-opacity"
           >
             {span.value}
@@ -80,9 +89,21 @@ export function PostBody({ blocks, footnotes, title, ruleColor, invertImages }: 
             return (
               <ul key={key} className="my-[1.2em] space-y-[0.6em]">
                 {block.items.map((item, j) => (
-                  <li key={`${key}-${j}`} className="flex">
-                    <span className="mr-[0.7em] flex-shrink-0" aria-hidden="true">•</span>
-                    <span>{renderInline(item, `${key}-${j}`)}</span>
+                  <li key={`${key}-${j}`}>
+                    <div className="flex">
+                      <span className="mr-[0.7em] flex-shrink-0" aria-hidden="true">•</span>
+                      <span>{renderInline(item.content, `${key}-${j}`)}</span>
+                    </div>
+                    {item.children && (
+                      <ul className="mt-[0.6em] ml-[1.4em] space-y-[0.6em]">
+                        {item.children.map((child, k) => (
+                          <li key={`${key}-${j}-${k}`} className="flex">
+                            <span className="mr-[0.7em] flex-shrink-0" aria-hidden="true">◦</span>
+                            <span>{renderInline(child, `${key}-${j}-${k}`)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>

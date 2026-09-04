@@ -11,9 +11,14 @@ export interface PostMeta {
   drawing?: string;
 }
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+// AP style: months are abbreviated with a period, except March through July,
+// which are always spelled out.
+const MONTHS = [
+  'Jan.', 'Feb.', 'March', 'April', 'May', 'June',
+  'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.',
+];
 
-/** `2026-08-14` -> `Aug 14, 2026`, without going through Date/timezones. */
+/** `2026-08-14` -> `Aug. 14, 2026`, without going through Date/timezones. */
 export function formatDate(iso: string): string {
   const [year, month, day] = iso.split('-');
   const monthName = MONTHS[Number(month) - 1];
