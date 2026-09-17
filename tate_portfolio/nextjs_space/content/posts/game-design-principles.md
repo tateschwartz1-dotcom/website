@@ -1,5 +1,5 @@
 ---
-title: Game Design Principles to Use in Real Life
+title: Game design principles to use in real life
 date: 2026-09-03
 drawing: /posts/game-design-principles.png
 ---

@@ -20,7 +20,7 @@ export type Block =
   | { type: 'paragraph'; content: Inline[] }
   | { type: 'list'; items: ListItem[] }
   | { type: 'quote'; content: Inline[] }
-  | { type: 'image'; src: string; caption?: string };
+  | { type: 'image'; src: string; caption?: string; invert?: boolean };
 
 export interface Footnote {
   label: string;
@@ -36,7 +36,14 @@ export interface ParsedPost {
 const FOOTNOTE_DEF = /^\[\^([^\]]+)\]:\s*(.*)$/;
 // `[IMAGE: file.png — caption]`. The caption separator must have whitespace on
 // both sides so hyphens inside a filename aren't mistaken for it.
-const IMAGE_LINE = /^\[IMAGE:\s*(.+?)(?:\s+[—–-]\s+(.*?))?\s*\]$/;
+const IMAGE_LINE = /^\[IMAGE:\s*(.+?)\s*\]$/;
+// `| invert` marks black-ink line art on transparency, which is flipped to white
+// on dark backgrounds. Photographs, screenshots and color charts must never be,
+// so inversion is opt-in per image rather than applied to every one.
+const IMAGE_INVERT = /\s*\|\s*invert\s*$/i;
+// The caption separator needs whitespace on both sides so a hyphen inside a
+// filename (`nino-1.png`) isn't mistaken for it.
+const IMAGE_CAPTION = /^(.+?)(?:\s+[—–-]\s+(.*))?$/;
 // Leading whitespace is captured, not trimmed away: two or more spaces of indent
 // nests a bullet under the previous one.
 const LIST_ITEM = /^(\s*)[-*]\s+(.*)$/;
@@ -146,12 +153,15 @@ export function parseMarkdown(body: string): ParsedPost {
     const image = IMAGE_LINE.exec(trimmed);
     if (image) {
       flushAll();
+      const invert = IMAGE_INVERT.test(image[1]);
+      const parts = IMAGE_CAPTION.exec(image[1].replace(IMAGE_INVERT, ''));
       // A bare filename lives in /public/posts; an absolute path is used as given.
-      const src = image[1].trim();
+      const src = (parts?.[1] ?? '').trim();
       blocks.push({
         type: 'image',
         src: src.startsWith('/') ? src : `/posts/${src}`,
-        caption: image[2]?.trim() || undefined,
+        caption: parts?.[2]?.trim() || undefined,
+        invert: invert || undefined,
       });
       continue;
     }

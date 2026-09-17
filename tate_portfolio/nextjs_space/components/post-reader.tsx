@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from '@/context/ThemeContext';
 import { PostBody } from '@/components/post-body';
 import { PostDrawing } from '@/components/post-drawing';
+import { ImageLightbox, type Enlarged } from '@/components/image-lightbox';
 import { formatDate } from '@/lib/post-meta';
 import type { Block, Footnote } from '@/lib/markdown';
 import {
@@ -85,6 +86,9 @@ export function PostReader({ title, date, readingTime, drawing, blocks, footnote
       window.removeEventListener('pointerdown', onPointer);
     };
   }, [panelOpen]);
+
+  const [enlarged, setEnlarged] = useState<Enlarged | null>(null);
+  const closeEnlarged = useCallback(() => setEnlarged(null), []);
 
   const background = resolveBackground(settings, currentIndex);
   const typeface = TYPEFACES.find((t) => t.id === settings.typeface) ?? TYPEFACES[0];
@@ -273,9 +277,20 @@ export function PostReader({ title, date, readingTime, drawing, blocks, footnote
           </p>
 
           {drawing && (
-            <div className="w-[72%] mx-auto aspect-[4/3] mt-[2.2em] mb-[0.6em]">
+            <button
+              type="button"
+              onClick={() =>
+                setEnlarged({
+                  src: drawing,
+                  alt: `Drawing for ${title}`,
+                  invert: !!background.dark,
+                })
+              }
+              className="block w-[72%] mx-auto aspect-[4/3] mt-[2.2em] mb-[0.6em] cursor-zoom-in"
+              aria-label={`Enlarge drawing for ${title}`}
+            >
               <PostDrawing drawing={drawing} title={title} invert={background.dark} />
-            </div>
+            </button>
           )}
 
           <div className="mt-[2em]">
@@ -285,10 +300,18 @@ export function PostReader({ title, date, readingTime, drawing, blocks, footnote
               title={title}
               ruleColor={rule}
               invertImages={background.dark}
+              onEnlarge={setEnlarged}
             />
           </div>
         </article>
       </div>
+
+      <ImageLightbox
+        enlarged={enlarged}
+        onClose={closeEnlarged}
+        overlayColor={withAlpha(background.bg, 0.97)}
+        controlColor={fg}
+      />
     </main>
   );
 }

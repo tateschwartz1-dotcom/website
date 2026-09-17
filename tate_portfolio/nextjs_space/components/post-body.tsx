@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react';
 import { Block, Footnote, Inline } from '@/lib/markdown';
-import { PostDrawing } from '@/components/post-drawing';
+import type { Enlarged } from '@/components/image-lightbox';
 
 // A `/`-relative href is same-tab navigation, with one exception: a link
 // straight to a file (the games packet PDF, say) opens in a new tab so the
@@ -58,9 +58,18 @@ interface PostBodyProps {
   /** Pre-mixed rule color — Tailwind can't apply an opacity modifier to currentColor. */
   ruleColor: string;
   invertImages?: boolean;
+  /** Opens an image in the reader's lightbox. */
+  onEnlarge: (image: Enlarged) => void;
 }
 
-export function PostBody({ blocks, footnotes, title, ruleColor, invertImages }: PostBodyProps) {
+export function PostBody({
+  blocks,
+  footnotes,
+  title,
+  ruleColor,
+  invertImages,
+  onEnlarge,
+}: PostBodyProps) {
   return (
     <>
       {blocks.map((block, i) => {
@@ -109,12 +118,32 @@ export function PostBody({ blocks, footnotes, title, ruleColor, invertImages }: 
               </ul>
             );
 
-          case 'image':
+          case 'image': {
+            const alt = block.caption ?? `Image from ${title}`;
+            const isLineArt = block.invert ?? false;
             return (
               <figure key={key} className="my-[2em]">
-                <div className="w-full aspect-[4/3]">
-                  <PostDrawing drawing={block.src} title={title} invert={invertImages} />
-                </div>
+                {/* Inline images keep their own proportions — charts, maps and
+                    screenshots come in every shape, and a fixed frame would
+                    letterbox the wide ones down to nothing. Only images marked
+                    `| invert` are line art that should flip on dark
+                    backgrounds; a photograph inverted is a negative. */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    onEnlarge({ src: block.src, alt, invert: !!(isLineArt && invertImages) })
+                  }
+                  className="block w-full cursor-zoom-in"
+                  aria-label={`Enlarge image: ${alt}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={block.src}
+                    alt={alt}
+                    className="w-full h-auto"
+                    style={isLineArt && invertImages ? { filter: 'invert(1)' } : undefined}
+                  />
+                </button>
                 {block.caption && (
                   <figcaption className="mt-[0.7em] text-center text-[0.8em] italic opacity-70">
                     {block.caption}
@@ -122,6 +151,7 @@ export function PostBody({ blocks, footnotes, title, ruleColor, invertImages }: 
                 )}
               </figure>
             );
+          }
 
           default:
             return (

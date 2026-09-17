@@ -1,5 +1,5 @@
 ---
-title: Why Listen?
+title: Why listen?
 date: 2026-08-18
 drawing: /posts/why-listen.png
 ---
@@ -23,14 +23,14 @@ I'll fight to stack my odds. I'll flash my gold. Until then, welcome to my test 
 
 Here's a teaser of what could appear on the menu:
 
-- Game Design Principles to Use in Real Life
-- Writing to Strangers Through a Book
-- How Little Halloween Village Sets Are Designed
-- The Only 5 Political Facts Needed for Arguing
-- My Favorite Beliefs
-- Don't Donate to Hospitals: Effective Altruism for the Unaware
-- The Embarrassing Thing
-- Why Stare at One Painting for 10 Minutes Again and Again
-- Plausibility Horror Stories
-- Doom as a Cure for Workaholism
-- Giving Notes to Strangers
+- Game design principles to use in real life
+- Writing to strangers through a book
+- How little Halloween village sets are designed
+- The only 5 political facts needed for arguing
+- My favorite beliefs
+- Don't donate to hospitals: Effective Altruism for the unaware
+- The embarrassing thing
+- Why stare at one painting for 10 minutes again and again
+- Plausibility horror stories
+- Doom as a cure for workaholism
+- Giving notes to strangers
