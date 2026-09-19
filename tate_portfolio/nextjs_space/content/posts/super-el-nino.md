@@ -8,9 +8,9 @@ drawing: /posts/super-el-nino.png
 
 We aren’t all going to die, but I’m ready for things to become really different, really fast.
 
-This write-up is adapted from a presentation I gave to Effective Altruism Purdue. It’s about El Niño, the Iran war and how they will build off of each other to make next year historical.
+This write-up is adapted from a presentation I gave to Effective Altruism Purdue. It’s about El Niño, the Iran war and how they will build off of each other to make next year historic.
 
-You can view the slidedeck that includes discussion questions related to if the lack of existential risk is a valid reason to deprioritize climate as a cause area [here](/Super-El-Nino-Slides.pdf).
+You can view the slide deck that includes discussion questions related to whether the lack of existential risk is a valid reason to deprioritize climate as a cause area [here](/Super-El-Nino-Slides.pdf).
 
 # Super El Niño
 
@@ -26,11 +26,11 @@ The warm water is spread out, causing more heat transfer from the sea’s surfac
 
 [IMAGE: nino-3.png]
 
-As of Sept. 16, we have crossed +3 °C above what the sea surface should be. That is about 2.2 standard deviations above how hot a typical El Niño is.
+As of Sept. 16, we have crossed +3 °C above what the sea surface should be. That is at least [3](https://x.com/LeonSimons8/status/2097589810432995582) standard deviations above how hot a typical El Niño is.
 
 The temperature will continue to grow, with [projections](https://dashboard.theclimatebrink.com/#enso) of the final temperature ranging between +3.6 °C and +4.2 °C.
 
-For context, an El Niño is considered a super El Niño when it crosses +2 °C. This isn’t just extreme, it’s the most extreme of the extremes.
+For context, an El Niño is considered a super El Niño when it crosses +2 °C. This isn’t just extreme; it’s the most extreme of the extremes.
 
 Godzilla El Niño is on the horizon getting ready to crush the world.
 
@@ -42,13 +42,11 @@ The EU was kind enough to release a [map](https://joint-research-centre.ec.europ
 
 Some highlights:
 
-Europe will get warmer. This region already has a heat-death problem, with more than [35,000 people](https://www.theguardian.com/environment/2026/aug/25/at-least-35000-excess-deaths-europe-back-to-back-heatwaves) killed over the summer. People were willing to jump into the [filthy Seine](https://www.france24.com/en/france/20250812-france-seine-paris-open-swimming-tourists-residents-embrace-temperatures-soar) to cool off due to the local buildings being designed to trap heat and having no AC. It will get significantly worse next year.
+Europe will get warmer. This region already has a heat-death problem, with more than [35,000 people](https://www.theguardian.com/environment/2026/aug/25/at-least-35000-excess-deaths-europe-back-to-back-heatwaves) killed over the summer. People were willing to jump into the [filthy Seine](https://www.cnn.com/2026/07/04/travel/paris-seine-river-toxic-swimming-spots) to cool off due to European buildings lacking AC and being designed to trap heat. It will get significantly worse next year.
 
-India, responsible for [11%](https://www.visualcapitalist.com/ranked-worlds-largest-agricultural-economies/) of the world’s food economy and already dealing with drought, will become even hotter and drier. It is just one of the many agricultural powerhouses that will deal with a worse harvest on top of an [already poor](https://www.world-grain.com/articles/23179-fao-food-price-index-rises-again) 2026.
+India, responsible for [11%](https://www.visualcapitalist.com/ranked-worlds-largest-agricultural-economies/) of the world’s food economy and already dealing with drought, will become even hotter and drier. It is just one of the many agricultural powerhouses that will deal with a worse harvest on top of already [rising prices](https://www.world-grain.com/articles/23179-fao-food-price-index-rises-again) from shortage in 2026.
 
 In addition to agriculture, extreme weather affects power. Floods cause power grids to shut down. Droughts make it so there isn’t enough water for generation in the first place.
-
-Finally, anywhere you can see the symbol for mass migration, you can expect a lot of people dying from heat and crime.
 
 Here’s a [zoomed-in look](https://www.timeforkids.com/g34/tfk-explains-el-nino-g3/?rl=en-720) on the United States:
 
@@ -64,13 +62,11 @@ But Godzilla El Niño isn’t coming alone. One terror is already here, powering
 
 # The Iran war
 
-[30%](https://www.ifpri.org/blog/the-iran-wars-impacts-on-global-fertilizer-markets-and-food-production/) of the world’s fertilizer goes through the Strait of Hormuz. Went. 30% went through the Strait.
-
-The consumer will end up paying for all of these effects.
+[30%](https://www.ifpri.org/blog/the-iran-wars-impacts-on-global-fertilizer-markets-and-food-production/) of the world’s fertilizer trade goes through the Strait of Hormuz. Went. 30% went through the Strait.
 
 In addition to fertilizer, you need a lot of power for agriculture. Giant agricultural equipment guzzles oil and gas by the gallon.
 
-25% of the world’s oil went through the Strait of Hormuz. To get around the blockade, some oil has been going through Saudi Arabia’s pipeline. Recently, Iran-backed forces bombed it so hard you could see the leakage [from space](https://www.wsj.com/world/middle-east/saudi-arabia-shuts-down-pipeline-that-was-a-crucial-hormuz-bypass-4fe29001).
+[25%](https://www.britannica.com/topic/How-Much-Oil-Passes-Through-the-Strait-of-Hormuz) of the world’s oil went through the Strait of Hormuz. To get around the blockade, some oil has been going through Saudi Arabia’s pipeline. Recently, Iran-backed forces bombed it so hard you could see the leakage [from space](https://www.wsj.com/world/middle-east/saudi-arabia-shuts-down-pipeline-that-was-a-crucial-hormuz-bypass-4fe29001).
 
 [IMAGE: nino-6.jpg]
 
@@ -80,19 +76,19 @@ To keep voters happy, the U.S. government has been subsidizing oil using its res
 
 [IMAGE: nino-7.png]
 
-Notice how all of the non-regular gas prices have jumped more than regular gas. Without the political subsidies, prices at the pump would be much higher than they are right now.
+Notice how diesel has jumped more than regular gas. Without the political subsidies, prices at the pump would be much higher than they are right now.
 
 But those subsidies won’t last long. [Here](https://www.depletion.org/#supply) is the amount of oil the U.S. has left in reserves:
 
 [IMAGE: nino-8.png]
 
-The yellow line is if the war continues as it does right now. Iran escalating suggests that the red line is realistic.
+The green line is if the war winds down. The yellow line is if the war continues as it does right now. Iran escalating suggests that the red line is realistic.
 
 The limit at 250 million barrels in the reserve represents the global energy flow (GEF) minimum. Past this line, subsidies no longer work effectively. We won’t be able to take out oil fast enough from the salt caves they’re stored in due to reserves being too low.
 
 If we continue to subsidize as we do now, we will hit the GEF minimum in late October. If Iran continues to escalate (which they seemingly intend on doing), we will hit it in early October.
 
-Rural agricultural communities live and die on oil. It’s used for production, shipping food out and trucking in products from long distances to stock their shelves. In terms of the U.S., they will be crushed first.
+Rural agricultural communities live and die on oil. It’s used for production, shipping food out and trucking in products from long distances to stock their shelves. In the U.S., they will be crushed first.
 
 With the holiday season coming up, I would book your flights before the subsidies dry up in October and prices soar.
 
@@ -104,6 +100,6 @@ To help you understand what is about to go down, I drew a map:
 
 [IMAGE: nino-9.png | invert]
 
-At first, the data gifted me a sense of impending doom. Now, I’m more focused on enjoying the current good times.
+At first, the data gifted me a sense of impending doom of a generational depression. Now, I’m more focused on enjoying the current good times.
 
 I highly suggest you read director [Adam McKay](https://letterboxd.com/director/adam-mckay/)’s short and entertaining [write-up](https://www.currentaffairs.org/news/the-massive-climate-lie-that-will-destroy-human-civilization) on the current status of climate change. These movie people have a way with words.
