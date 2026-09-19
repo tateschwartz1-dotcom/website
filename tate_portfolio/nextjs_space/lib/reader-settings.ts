@@ -64,7 +64,7 @@ export const DEFAULT_SETTINGS: ReaderSettings = {
   typeface: 'sans',
   size: 20,
   spacing: 'normal',
-  width: 'normal',
+  width: 'narrow',
   background: 'theme',
 };
 
