@@ -58,7 +58,7 @@ Like most farming regions in the world, the Midwest’s and Northwest’s food p
 
 Weaker food production at home; weaker food production abroad. Grocery prices will spike.
 
-But Godzilla El Niño isn’t coming alone. The supporting actor is soon to be unleashed, setting the scene for an all-out attack.
+But Godzilla El Niño isn’t coming alone. He has a partner-in-crime, setting the scene for an all-out attack.
 
 # The Iran war
 
@@ -100,6 +100,6 @@ To help you understand what is about to go down, I drew a map:
 
 [IMAGE: nino-9.png | invert]
 
-At first, the data gifted me a sense of impending doom of a generational depression. Now, I’m more focused on enjoying the current good times.
+At first, the data gifted me a sense of impending doom for a generational depression. Now, I’m more focused on enjoying the current good times.
 
 I highly suggest you read director [Adam McKay](https://letterboxd.com/director/adam-mckay/)’s short and entertaining [write-up](https://www.currentaffairs.org/news/the-massive-climate-lie-that-will-destroy-human-civilization) on the current status of climate change. These movie people have a way with words.
