@@ -26,7 +26,7 @@ The warm water is spread out, causing more heat transfer from the sea’s surfac
 
 [IMAGE: nino-3.png]
 
-As of Sept. 16, we have crossed +3 °C above what the sea surface should be. That is at least [3](https://x.com/LeonSimons8/status/2097589810432995582) standard deviations above how hot a typical El Niño is.
+As of Sept. 16, we have crossed +3 °C above what the sea surface should be. That is more than [3](https://x.com/LeonSimons8/status/2097589810432995582) standard deviations above how hot a typical El Niño is.
 
 The temperature will continue to grow, with [projections](https://dashboard.theclimatebrink.com/#enso) of the final temperature ranging between +3.6 °C and +4.2 °C.
 
@@ -58,7 +58,7 @@ Like most farming regions in the world, the Midwest’s and Northwest’s food p
 
 Weaker food production at home; weaker food production abroad. Grocery prices will spike.
 
-But Godzilla El Niño isn’t coming alone. One terror is already here, powering up for the all-out attack.
+But Godzilla El Niño isn’t coming alone. The supporting actor is soon to be unleashed, setting the scene for an all-out attack.
 
 # The Iran war
 
