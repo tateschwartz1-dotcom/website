@@ -26,11 +26,13 @@ The warm water is spread out, causing more heat transfer from the sea’s surfac
 
 [IMAGE: nino-3.png]
 
-As of Sept. 16, we have crossed +3 °C above what the sea surface should be. That is more than [3](https://x.com/LeonSimons8/status/2097589810432995582) standard deviations above how hot a typical El Niño is.
+As of Sept. 16, we have crossed +3 °C above average. That is more than [4](https://x.com/LeonSimons8/status/2097589810432995582) standard deviations above how hot a typical El Niño is.
 
 The temperature will continue to grow, with [projections](https://dashboard.theclimatebrink.com/#enso) of the final temperature ranging between +3.6 °C and +4.2 °C.
 
-For context, an El Niño is considered a super El Niño when it crosses +2 °C. This isn’t just extreme; it’s the most extreme of the extremes.
+This El Niño has already broken the modern record for sea surface heat and has three more months of growing. This isn’t just extreme; it’s the most extreme of the extremes.
+
+The event has [officially met](https://www.cnn.com/2026/09/14/weather/super-el-nino-forecast-strength-climate) the threshold of +2 °C above relative average to become “super.”
 
 Godzilla El Niño is on the horizon getting ready to crush the world.
 
