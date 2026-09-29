@@ -43,14 +43,14 @@ export default function ProjectDetailPage({
         </p>
         <p className="mb-4">
           <a
-            href="https://www.degy.com/"
+            href="https://www.cco.purdue.edu/"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4 hover:opacity-70 transition-opacity"
           >
-            Degy Entertainment
+            Purdue Center for Career Opportunities
           </a>
-          : How can you design programs to help small artists?
+          : How do you get 10,000 new freshmen to learn about their resources?
         </p>
         <p>
           (To see more of my serious business, such as my work experience, check out my{' '}

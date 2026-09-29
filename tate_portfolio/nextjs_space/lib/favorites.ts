@@ -22,6 +22,10 @@ export const favorites: FavoriteCategory[] = [
     items: ['A Long Way from Chicago', 'Thinking, Fast and Slow', 'Dream School'],
   },
   {
+    category: 'Sport teams',
+    items: ['Detroit Lions', 'Purdue Basketball', 'Detroit Tigers'],
+  },
+  {
     category: 'Pokemon',
     items: ['Palossand', 'Porygon', 'Fuecoco'],
   },
@@ -36,10 +40,6 @@ export const favorites: FavoriteCategory[] = [
   {
     category: 'Tabletop games',
     items: ['Animal Upon Animal', 'Slapzi', 'Splendor'],
-  },
-  {
-    category: 'Sport teams',
-    items: ['Purdue Basketball', 'Detroit Tigers', 'Kahawa Pride FC'],
   },
   {
     category: 'Personality tests',

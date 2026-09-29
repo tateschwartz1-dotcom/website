@@ -42,7 +42,7 @@ export const projects: Project[] = [
     description: "I'm working on some new exciting projects now. I can't share the details… but here are some sneak peaks.",
     descriptionLinks: [
       { text: 'MascotGO', url: 'https://www.mascotgo.com/' },
-      { text: 'Degy Entertainment', url: 'https://www.degy.com/' },
+      { text: 'Purdue Center for Career Opportunities', url: 'https://www.cco.purdue.edu/' },
     ],
     image: '/projects/classifiedfolder.png',
     rotation: -8,
