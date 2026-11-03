@@ -133,7 +133,7 @@ export function PostBody({
                   onClick={() =>
                     onEnlarge({ src: block.src, alt, invert: !!(isLineArt && invertImages) })
                   }
-                  className="block w-full cursor-zoom-in"
+                  className={`block cursor-zoom-in ${block.small ? 'w-[11em] max-w-full mx-auto' : 'w-full'}`}
                   aria-label={`Enlarge image: ${alt}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}

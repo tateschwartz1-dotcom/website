@@ -20,7 +20,7 @@ export type Block =
   | { type: 'paragraph'; content: Inline[] }
   | { type: 'list'; items: ListItem[] }
   | { type: 'quote'; content: Inline[] }
-  | { type: 'image'; src: string; caption?: string; invert?: boolean };
+  | { type: 'image'; src: string; caption?: string; invert?: boolean; small?: boolean };
 
 export interface Footnote {
   label: string;
@@ -41,6 +41,9 @@ const IMAGE_LINE = /^\[IMAGE:\s*(.+?)\s*\]$/;
 // on dark backgrounds. Photographs, screenshots and color charts must never be,
 // so inversion is opt-in per image rather than applied to every one.
 const IMAGE_INVERT = /\s*\|\s*invert\s*$/i;
+// `| small` centers an image at a fraction of the column, for portraits and other
+// low-resolution images that a full-width frame would blow up.
+const IMAGE_SMALL = /\s*\|\s*small\s*$/i;
 // The caption separator needs whitespace on both sides so a hyphen inside a
 // filename (`nino-1.png`) isn't mistaken for it.
 const IMAGE_CAPTION = /^(.+?)(?:\s+[—–-]\s+(.*))?$/;
@@ -153,8 +156,10 @@ export function parseMarkdown(body: string): ParsedPost {
     const image = IMAGE_LINE.exec(trimmed);
     if (image) {
       flushAll();
-      const invert = IMAGE_INVERT.test(image[1]);
-      const parts = IMAGE_CAPTION.exec(image[1].replace(IMAGE_INVERT, ''));
+      const small = IMAGE_SMALL.test(image[1]);
+      const body = image[1].replace(IMAGE_SMALL, '');
+      const invert = IMAGE_INVERT.test(body);
+      const parts = IMAGE_CAPTION.exec(body.replace(IMAGE_INVERT, ''));
       // A bare filename lives in /public/posts; an absolute path is used as given.
       const src = (parts?.[1] ?? '').trim();
       blocks.push({
@@ -162,6 +167,7 @@ export function parseMarkdown(body: string): ParsedPost {
         src: src.startsWith('/') ? src : `/posts/${src}`,
         caption: parts?.[2]?.trim() || undefined,
         invert: invert || undefined,
+        small: small || undefined,
       });
       continue;
     }
