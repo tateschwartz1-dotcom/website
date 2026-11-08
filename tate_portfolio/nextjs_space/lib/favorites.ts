@@ -23,7 +23,7 @@ export const favorites: FavoriteCategory[] = [
   },
   {
     category: 'Sport teams',
-    items: ['Detroit Lions', 'Purdue Basketball', 'Detroit Tigers'],
+    items: ['Purdue Basketball', 'Detroit Tigers', 'Kahawa Pride FC'],
   },
   {
     category: 'Pokemon',
