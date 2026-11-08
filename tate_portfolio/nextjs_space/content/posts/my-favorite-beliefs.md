@@ -80,7 +80,7 @@ To cope, I reason it’s more embarrassing to not try so much that you publicly 
 
 # Nothing is a resource
 
-[IMAGE: beliefs-one-with-nothing.jpg | small]
+[IMAGE: beliefs-one-with-nothing.png | small]
 
 I think people undervalue space. Having nothing. A lack. A clean slate.
 
