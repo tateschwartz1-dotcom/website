@@ -80,6 +80,8 @@ To cope, I reason it’s more embarrassing to not try so much that you publicly 
 
 # Nothing is a resource
 
+[IMAGE: beliefs-one-with-nothing.jpg | small]
+
 I think people undervalue space. Having nothing. A lack. A clean slate.
 
 The default of keeping is intuitive. “It’s better than nothing, no?”
