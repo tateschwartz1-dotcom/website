@@ -52,6 +52,8 @@ As much as we would like the hero who has trained the hardest and become the bes
 
 There is so much variance that you can’t simply trust the numbers. The [Optimizer’s Curse](https://forum.effectivealtruism.org/posts/q2TfTirvspCTH2vbZ/the-best-cause-will-disappoint-you-an-intro-to-the) makes it difficult to use estimations.
 
+[IMAGE: beliefs-optimizers-curse.webp]
+
 When making estimates and picking to invest in the best, you are biased toward picking high-variance options that get lucky with the uncertainty during the estimation. Even if the estimates are unbiased and are just off due to inherent variance, picking the top guess will lead you, on average, to be disappointed with a worse true performance.
 
 Variance applies to estimations and the results themselves. If success is made up of talent and luck, how do you know if doing well isn’t just a coincidence?
