@@ -1,11 +1,12 @@
 // A small markdown parser covering exactly the features posts use:
-// headings, bold, italic, links, bulleted lists, pull quotes, images, footnotes.
+// headings, bold, italic, strikethrough, links, bulleted lists, pull quotes, images, footnotes.
 // Output is a plain JSON tree so a server component can hand it to a client one.
 
 export type Inline =
   | { type: 'text'; value: string }
   | { type: 'bold'; value: string }
   | { type: 'italic'; value: string }
+  | { type: 'strike'; value: string }
   | { type: 'link'; value: string; href: string }
   | { type: 'footnoteRef'; label: string; index: number };
 
@@ -73,7 +74,8 @@ function parseInline(raw: string, numberFor: (label: string) => number): Inline[
   let rest = raw;
 
   // Ordered by precedence: bold before italic so `**x**` never reads as italic.
-  const pattern = /(\*\*([^*]+)\*\*)|(\*([^*]+)\*)|(\[\^([^\]]+)\])|(\[([^\]]+)\]\(([^)]+)\))/;
+  const pattern =
+    /(\*\*([^*]+)\*\*)|(\*([^*]+)\*)|(\[\^([^\]]+)\])|(\[([^\]]+)\]\(([^)]+)\))|(~~([^~]+)~~)/;
 
   while (rest.length > 0) {
     const match = pattern.exec(rest);
@@ -94,6 +96,8 @@ function parseInline(raw: string, numberFor: (label: string) => number): Inline[
       spans.push({ type: 'footnoteRef', label: match[6], index: numberFor(match[6]) });
     } else if (match[8] !== undefined && match[9] !== undefined) {
       spans.push({ type: 'link', value: match[8], href: match[9] });
+    } else if (match[11] !== undefined) {
+      spans.push({ type: 'strike', value: match[11] });
     }
 
     rest = rest.slice(match.index + match[0].length);

@@ -21,6 +21,8 @@ function renderInline(spans: Inline[], keyPrefix: string) {
         return <strong key={key} className="font-semibold">{span.value}</strong>;
       case 'italic':
         return <em key={key}>{span.value}</em>;
+      case 'strike':
+        return <s key={key}>{span.value}</s>;
       case 'link':
         return (
           <a
