@@ -8,7 +8,7 @@ I stumbled across [this article](https://www.nytimes.com/2025/11/09/insider/10-m
 
 For months now, I have been staring. Here are some of the health benefits:
 
-- Would you like to never be bored again? Reps of this train yourself to find entertainment in anything.
+- Would you like to never be bored again? Reps of this train you to find entertainment in anything.
 - Like a nice hot shower, it’s a habit to look forward to every day.
 - You gain an intimate appreciation of the art. The piece is now familiar, easy to take in and feels like a stranger-turned-friendly associate who remembers your name.
 - Once you master staring at paintings, you notice photos are really detailed paintings. And isn’t real life a really detailed photo? You now always have art to enjoy at your disposal.
